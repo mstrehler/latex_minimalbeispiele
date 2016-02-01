@@ -1,0 +1,54 @@
+% Minimalbeispiel
+% Definition einer eigenen Umgebung
+% Blindtext in den Fallvignetten (50 Wörter) von http://www.blindtextgenerator.de/
+
+
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\newcounter{fallvignettezaehler}
+
+\newenvironment{fallvignette}[2]
+	{%
+      \vspace{1ex}%
+      \begin{addmargin}[25pt]{0pt}%
+        \begin{small}%
+		\textbf{Fallvignette
+		    \arabic{fallvignettezaehler}\stepcounter{fallvignettezaehler}:} #1, \textsl{#2}.%
+    }
+	{%
+        \end{small}%
+        \end{addmargin}%
+        \vspace{1ex}%
+    }
+
+\begin{document}
+
+\setcounter{fallvignettezaehler}{1}
+
+\section*{Test Umgebung Fallvignette}
+
+Hier der Text vor den Fallvignetten.
+
+\begin{fallvignette}{Mann, 89 Jahre}{Aggression bei Demenz}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+pede justo, fringilla vel, aliquet nec, vulputate
+\end{fallvignette}
+
+Hier der Text zwischen den Fallvignetten.
+
+\begin{fallvignette}{Frau, 29 Jahre}{Schwere Depression}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+pede justo, fringilla vel, aliquet nec, vulputate
+\end{fallvignette}
+
+Hier der Text nach den Fallvignetten.
+
+\end{document}
