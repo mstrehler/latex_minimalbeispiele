@@ -1,0 +1,49 @@
+\documentclass{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning}
+
+\begin{document}
+
+% Säulengraphik für Eine Reihe von Hamilton-Depression-Scale-Verlauf (HAM-D-17)
+% Beispiel adaptiert von http://www.statistiker-wg.de/pgf/tutorials/barplot.htm
+% es handelt sich um 4 Säulen, je 1cm) mit je einen Zwischenraum von 0.5cm.
+\begin{tikzpicture}
+
+	% Koordinatensystem
+	% Abzisse, die Länge berechnet sich aus den 4 Säulen
+	% u. Zwischenräumen (4 x 1cm + 5 x 0.5cm = 7.5 cm)
+	\draw (0cm,0cm) -- (7.5cm,0cm);			% die eigentliche Abszisse
+	\draw (0cm,0cm) -- (0cm,-0.1cm);  		% linkes Ende der Abzisse
+	\draw (7.5cm,0cm) -- (7.5cm,-0.1cm);  	% rechtes Ende der Abzisse
+  
+  	% Ordinate. Die Höhe der Ordinate entspricht dem Punktewert der HAM-D-Skala
+  	% hier maximal: 24 Pt, die Skala soll also bis 30 Pt. reichen (Skala 1cm = 5 Pt.)
+  	% ein zusätzlicher Raum (1cm) wird für die Beschriftung gelassen.
+ 	\draw (-0.1cm,0cm) -- (-0.1cm,7cm);  %Ordinate
+ 	\draw (-0.1cm,0cm) -- (-0.2cm,0cm);  %unteres Ende der Ordinate
+ 	\draw (-0.1cm,7cm) -- (-0.2cm,7cm) node [left] {Pt.};  %oberes Ende der Ordinate und Beschriftung
+
+	% foreach-Schlefe für die Hilfslinien mit den Variablen 
+  \foreach \x/\beschriftung in {2/10,4/20,6/30 }  %Hilfslinien x=Verlauf Hilfslinie, y=Beschriftung
+    \draw[gray!50, text=black] (-0.2 cm,\x cm) -- (7.5 cm,\x cm) 
+      node at (-0.5 cm,\x cm) {\beschriftung};  %Beschriftung der Hilfslinien
+
+  %\node at (3cm,8cm) {HAM-D 17};  %Überschrift (wir verzichten drauf...
+
+  \foreach \x/\y/\datum/\wert in {0.5/4.8/30.07.10/24,  	%\x ist Anfang der Säulen
+                              2/3.4/31.08.10/17,  			%\y ist Höhe der Säulen
+                              3.5/2.2/28.09.10/11,
+                              5/1.0/30.10.10/5}
+    {
+     \draw[fill=gray] (\x cm,0cm) rectangle (1cm+\x cm,\y cm) %die Säulen
+       node at (0.5cm + \x cm,\y cm + 0.3cm) {\wert}; %die Punktangabe über den Säulen
+     \node[rotate=45, left] at (0.6 cm +\x cm,-0.1cm) {\datum}; %Säulenbeschriftung
+    };
+
+\end{tikzpicture}
+
+\end{document}
