@@ -1,0 +1,59 @@
+\documentclass[DIV=13]{scrartcl}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+ 
+\usepackage{framed,color,url}
+\definecolor{shadecolor}{rgb}{0.9,0.5,0.5}
+
+% define a new environment "fall" (case report)
+% TODO: The continue sign "cont." matches not the language set in babel
+\newenvironment{fall}[1]{
+	\definecolor{TFFrameColor}{rgb}{0.7,0.7,1}
+	\definecolor{TFTitleColor}{rgb}{0,0,0}
+	\begin{titled-frame}{Fallbeschreibung: #1}
+}{
+	\end{titled-frame}
+}
+
+\begin{document}
+
+\section*{Beispiel zum \texttt{framed} package}
+
+% TODO: I dont' have a clue, why compiling stopps at this point? the url
+% package is set correctly and in other latex code on this machine all works
+% correctly.
+\url{https://www.ctan.org/pkg/framed}
+
+\begin{framed}
+Text mit \texttt{framed}
+\end{framed}
+
+\begin{leftbar}
+Text mit \texttt{leftbar}
+\end{leftbar}
+
+\begin{shaded}
+Text mit \texttt{shaded}
+\end{shaded}
+
+\definecolor{shadecolor}{rgb}{0.5,0.5,0.9}
+
+\begin{shaded}
+Text mit \texttt{shaded}
+\end{shaded}
+
+\definecolor{TFFrameColor}{rgb}{0.8,0.8,0.8}
+\definecolor{TFTitleColor}{rgb}{0,0,0}
+\begin{titled-frame}{Box-Titel}
+Text mit \texttt{titled-frame}
+\end{titled-frame}
+
+\begin{fall}{Frau B.}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+\end{fall}
+
+\end{document}
