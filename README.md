@@ -11,6 +11,9 @@ Mit diesem Package können umrandete, mit Schatten oder mit einer senkrechten Li
 ## Hamiltondiagramm
 Beispiel für ein Säulen-Diagramm mit `tikz`.
 
+## includegraphics
+Minimalbeispiel und Test des Befehles `\includegraphics{}`.
+
 ## Tabellenkalkulation
 Test des *spreadtab package*.
 
