@@ -1,0 +1,39 @@
+\documentclass{scrartcl}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+% This concludes the preamble
+
+\begin{document}
+
+\lstset{
+language=TeX,
+basicstyle=\small\ttfamily,
+numbers=left,
+numberstyle=\tiny,%
+frame=b,%
+columns=fullflexible,
+showstringspaces=false
+}
+
+\begin{lstlisting}[label=some-code,caption=Beispiel BibTeX-Eintrag für YouTube]
+@misc{gcn2011winter,
+    author =        {{Global Cycling Network}},
+    title =         {{Top 10 Tips For Cycling In Winter}},
+    type =          {Video-Datei},
+    year =          2011,
+    month =         {\APACmonth{11}},
+    day =           {14},
+    url =           {https://youtu.be/097kJPd-0q8},
+    lastchecked =   {10.12.2015}
+}
+\end{lstlisting}
+
+\end{document}
