@@ -1,0 +1,50 @@
+% Datei: minimalbeispiele/trennung-deutsch/main.tex
+% Beispiel für Einrichten der deutschen Trennung.
+% Begonnen: 14.11.2015 
+%
+% Einteilung des Paperformates, des Satzspiegels und eine Bindekorrektur
+\documentclass[a4paper,DIV13,BCOR0cm]{scrartcl}
+
+% Sprach-Einstellungen
+% babel ermöglicht die Verwendung verschiedener Sprachen, z.B. in Zitaten.
+% Können mit \selectlanguage{english} resp. \selectlanguage{ngerman}
+% umgestellt werden. Dabei ist die zuletzt eingestellte Sprache die
+% Grundsprache und die Sprache der Bezeichner ("Inhaltsverzeichnis",
+% "Abbildung") fest. Die Bezeichner können im Dokumentteil noch geändert
+% werden (z.B. \renewcommand*\contentsname{Inhalt}). inputenc erlaubt die
+% direkte Eingabe von Sonderzeichen, insbesondere deutscher Umlaute. Durch
+% \usepackage[T1]{fontenc} werden von LaTeX Fonts in westeuropäischer
+% Codierung verlangt. Dies führt zu einer verbesserten Trennung für
+% westliche Sprachen. Zudem wird die Standardschrift von Computer Modern zu
+% European Computer Modern umgeschaltet.
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% Problem, ein Hyphen in einem Wort (z.B. "Borderline-Persönlichkeitsstörung") verhindert,
+% dass das Wort weiter getrennt wird. Siehe Dokumentation ngerman.
+% http://homepage.ruhr-uni-bochum.de/Georg.Verweyen/silbentrennung.html
+
+\hyphenation{Trai-nings-la-ger}
+\hyphenation{Renn-rad}
+\hyphenation{Renn-ve-lo}
+
+% Folgende Funktion
+% http://tex.stackexchange.com/questions/55282/display-hyphenation-options-for-a-specific-word
+\def\rehbox{\unskip\unpenalty\setbox2\lastbox\ifhbox2
+  \setbox0\hbox{\hbox{\unhbox2} \unhbox0}\expandafter\rehbox\fi}
+\newcommand\printhyphens[1]{%
+  \setbox0\vbox{{\setbox0\hbox{}%
+      \pretolerance-1\hsize=0pt\hfuzz=\maxdimen
+      \noindent\hspace*{0pt}#1\par\rehbox\unhbox0}\par}%
+  \unvbox 0
+}
+
+\begin{document}
+
+\printhyphens{Trainingslager}
+\printhyphens{Borderline-Persönlichkeitsstörung} % Trennt nur bei "-"
+\printhyphens{Borderline"=Persönlichkeitsstörung} % Wichtig!
+
+\end{document}
