@@ -1,0 +1,23 @@
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\tikzstyle{block} = [rectangle,draw, 
+    text width=3cm, text centered, minimum height=1cm]
+
+\node(trauma)[block]{Trauma};
+\node(ptsd)[block,right= of trauma]{PTBS};
+
+\draw[->](trauma.east)to(ptsd.west);
+
+\end{tikzpicture}
+
+\end{document}
