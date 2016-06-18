@@ -1,0 +1,19 @@
+% Compilier-File für Artikel-Version der Präsentation
+
+
+\documentclass[DIV=13,a4paper,titlepage=false]{scrartcl}
+\usepackage{beamerarticle}
+\setjobnamebeamerversion{main.beamer}
+
+\input{main.tex}
+
+% Verhalten von Frame-Untertiteln im Modus <beamerarticle>
+%
+% Untertitel als Option des Frame-Befehles:
+% \begin{frame}{Titel}{Untertitel}
+% -> Untertitel wird im Artikel an den Titel angefügt
+%
+% Untertitel als eigenständiger Befehl
+% \begin{frame}{Titel}
+% \framesubtitle{Untertitel}
+% -> Untertitel wird im Artikel unterschlagen

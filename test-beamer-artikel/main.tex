@@ -1,0 +1,68 @@
+% Minimalbeispiel für Problem von mehreren Bildern
+% Beamer-File/Artikel-File
+% Das File nicht direkt compilieren!
+% das File wird eingebunden von
+% - main.beamer.tex -> für Präsentation
+% - main.article.tex -> für Artikel-Handout
+% - main.handout.tex -> für simples Handout ("PowerPoint-Style")
+
+\mode<presentation>
+{
+  \usetheme{Madrid}  
+  \usecolortheme{sidebartab}
+  \useinnertheme{rectangles}
+
+  \setbeamercovered{transparent}
+	\beamertemplatenavigationsymbolsempty
+	\setbeamertemplate{footline}[frame number]
+}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Fonts Fonts Fonts
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage[T1]{fontenc} % T1 Schrift Encoding
+\usepackage{textcomp}	 % additional symbols (Text Companion font extension)
+
+\usepackage{caption}
+
+\usepackage{ulem} % durch und -unterstreichen
+
+\usepackage{arev}				%% --- Arev Sans
+								%% kommt mit den passenden Math- und Typwriter-Schriften 
+
+\usepackage[ngerman]{babel}
+
+\usepackage{bibentry}
+\nobibliography*
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{booktabs} 	% schönere Tabellen, siehe WAsmL, p. 124
+\usepackage{array} % is required
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{rgb}{1,0.8,0.3}
+
+\newcounter{fallgeschichte}
+\setcounter{fallgeschichte}{1}
+
+\def\TReg{\textsuperscript{\textregistered}}
+
+\usepackage{pgfpages}
+%\pgfpagesuselayout{4 on 1}[a4paper,landscape,border shrink=5mm]
+
+\begin{document}
+
+
+\begin{frame}{Slide mit zwei Bildern}
+\begin{figure}
+ \center
+         \includegraphics<1>[width=0.7\textwidth]{figs/pers050proz.jpg}
+         \only<beamer>{\includegraphics<2>[width=0.7\textwidth]{figs/pers100proz.jpg}}
+         \caption*{Lore Ipsum}
+\end{figure}
+
+\end{frame}
+
+\end{document}
