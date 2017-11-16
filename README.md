@@ -1,6 +1,8 @@
 # Latex Minimalbeispiele
 Einige Minimalbeispiele in LaTeX als Beispiele oder Test von Problemen oder packages.
 
+## apacite
+
 ## beamer-handout
 Eine Möglichkeit, mittels 'makefile' aus dem selben LaTeX-Dokument mit der Beamer-Class eine Präsentation sowie ein Handout zu generieren.
 Im Präsentationsmodus werden werden bei stufenweisem Aufdecken von Items u.ä. jeweils verschiedene Slides erzeugt,
@@ -18,23 +20,47 @@ make handout
 Die unterschiedliche Namensgebung wird mit der pdflatex-Option `-jobname` erreicht,
 damit sich bei der Erzeugung der beiden Compiledurchläufe die Ergebnisse sich nicht gegenseitig überschreiben.
 
-## Fallvignette
-Eine einfache, selbstdefinierte LaTeX-Umgebung, wie sie z.B. für die Darstellung eines abgesetzten Textes (Boxtext) gebraucht werden kann. Hier im Beispiel für eine medizinische Fallvignette.
+## beamer-handout
+
+## box-pfeil
+
+## fallvignette
+Eine einfache, selbstdefinierte LaTeX-Umgebung, wie sie z.B. für die
+Darstellung eines abgesetzten Textes (Boxtext) gebraucht werden kann. Hier im
+Beispiel für eine medizinische Fallvignette.
+
+## flussdiagramm
 
 ## framed
 Beispiele zum [framed package](https://www.ctan.org/pkg/framed).
 Mit diesem Package können umrandete, mit Schatten oder mit einer senkrechten Linie versehene Textabschnitte erzeugt werden.
 
-## Hamiltondiagramm
+## font-test
+
+## framed
+
+## gezackte-box
+
+## hamiltondiagramm
 Beispiel für ein Säulen-Diagramm mit `tikz`.
 
 ## includegraphics
 Minimalbeispiel und Test des Befehles `\includegraphics{}`.
 
-## Tabellenkalkulation
+## nice_listing
+
+## overpic
+
+## tabellenkalkulation
 Test des *spreadtab package*.
 
 ## Tastenfont
 Darstellung von Tastatur-Zeichen unter Anwendung des *tikz package*.
 
+## test-beamer-artikel
 
+## test-caption
+
+## trennung-deutsch
+
+## tufte_handout_test
