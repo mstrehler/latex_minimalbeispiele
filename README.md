@@ -2,6 +2,10 @@
 Einige Minimalbeispiele in LaTeX als Beispiele oder Test von Problemen oder packages.
 
 ## apacite
+Beispiel für die Verwendung des *apacite package*. Ermöglicht das Zitieren und
+Referenzieren nach den Regeln der *American Psychological Association* (APA
+style).
+Links: [APA style](http://www.apastyle.org/), [apacite](https://ctan.org/pkg/apacite)
 
 ## beamer-handout
 Eine Möglichkeit, mittels 'makefile' aus dem selben LaTeX-Dokument mit der Beamer-Class eine Präsentation sowie ein Handout zu generieren.
@@ -50,7 +54,6 @@ Minimalbeispiel und Test des Befehles `\includegraphics{}`.
 ## nice_listing
 
 ## overpic
-
 ## tabellenkalkulation
 Test des *spreadtab package*.
 
