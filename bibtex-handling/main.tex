@@ -1,0 +1,34 @@
+% Einteilung des Papierformats, des Satzspiegels und einer Bindekorrektur
+\documentclass[a4paper,DIV13,BCOR0cm,draft=TRUE]{scrartcl}
+
+% Sprach-Einstellungen
+% babel ermöglicht die Verwendung verschiedener Sprachen, z.B. in Zitaten.
+% inputenc erlaubt die
+% direkte Eingabe von Sonderzeichen, insbesondere deutscher Umlaute. Durch
+% \usepackage[T1]{fontenc} werden von LaTeX Fonts in westeuropäischer
+% Codierung verlangt.
+\usepackage[english,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{babelbib}
+\usepackage{url}		% wird von babelbib gebraucht
+\usepackage{apacite}
+
+% Neudefinition des Bezeichners
+\renewcommand*\refname{Quellen} % Standard: Literaturverzeichnis
+
+\begin{document}
+
+Beispiel für Referenzen zu verschiedenen Quellen aus verschiedenen bib-files.
+
+\verb|\cite| einzeln: \cite{dummy2000} und \cite{DCRainmaker2018}
+
+\verb|\cite| zusammen: \cite{dummy2000,DCRainmaker2018}
+
+\verb|\citeNP| einzeln: \citeNP{dummy2000} und \citeNP{DCRainmaker2018}
+
+\bibliographystyle{apacite}
+\bibliography{bib1.bib,bib2.bib}
+
+\end{document}

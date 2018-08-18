@@ -24,7 +24,9 @@ make handout
 Die unterschiedliche Namensgebung wird mit der pdflatex-Option `-jobname` erreicht,
 damit sich bei der Erzeugung der beiden Compiledurchläufe die Ergebnisse sich nicht gegenseitig überschreiben.
 
-## beamer-handout
+## bibtex-handling
+Verwendung von mehreren `bib`-Dateien. Zudem ein Minimalbeispiel eines Makefiles für sauberes Compilieren
+von LaTex- und `bib`-Files.
 
 ## box-pfeil
 
